@@ -34,6 +34,6 @@ public class GameManager : Singleton<GameManager>
     public void UpdateScore()
     {
         points++;
-        scoreText.text = points.ToString();
+        scoreText.text = "Points: "+points.ToString();
     }
 }
