@@ -11,7 +11,6 @@ public class GameManager : Singleton<GameManager>
     public int highscore;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI recordText;
-
     public void StartGame()
     {
         Time.timeScale = 1;
@@ -45,6 +44,13 @@ public class GameManager : Singleton<GameManager>
     {
         ShowLoseUI();
         Time.timeScale = 0;
+    }
+
+    public void LoadMenuScene()
+    {
+        Time.timeScale = 1;
+        GameMusic.Instance.EndMusic();
+        SceneManager.LoadScene("Menu");
     }
 
     public void UpdateScore()
