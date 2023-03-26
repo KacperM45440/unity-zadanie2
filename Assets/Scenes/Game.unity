@@ -430,7 +430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &466696894
 RectTransform:
   m_ObjectHideFlags: 0
@@ -944,7 +944,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loseUI: {fileID: 466696893}
   points: 0
+  highscore: 0
   scoreText: {fileID: 570674027}
+  recordText: {fileID: 673831708}
 --- !u!4 &1031869674
 Transform:
   m_ObjectHideFlags: 0

@@ -8,7 +8,9 @@ public class GameManager : Singleton<GameManager>
 {
     public GameObject loseUI;
     public int points = 0;
+    public int highscore;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI recordText;
 
     public void StartGame()
     {
@@ -17,7 +19,21 @@ public class GameManager : Singleton<GameManager>
 
     private void ShowLoseUI()
     {
+        if (!PlayerPrefs.HasKey("highscore"))
+        {
+            PlayerPrefs.SetInt("highscore", 0);
+        }
+
+        highscore = PlayerPrefs.GetInt("highscore");
+
+        if(points > highscore)
+        {
+            highscore = points;
+            PlayerPrefs.SetInt("highscore", highscore);
+        }
+
         loseUI.SetActive(true);
+        recordText.text = "Best Score: " + highscore.ToString();
     }
 
     public void RepeatGame()
