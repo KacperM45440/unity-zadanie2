@@ -11,6 +11,7 @@ public class GameManager : Singleton<GameManager>
     public int highscore;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI recordText;
+    public AudioSource pointRef;
     public void StartGame()
     {
         Time.timeScale = 1;
@@ -57,5 +58,6 @@ public class GameManager : Singleton<GameManager>
     {
         points++;
         scoreText.text = "Points: "+points.ToString();
+        pointRef.Play();
     }
 }
